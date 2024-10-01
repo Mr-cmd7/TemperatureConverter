@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">TemperatureConverter</string>
+    <string name="СаидбаевАлександрПавлович">Саидбаев Александр Павлович</string>
+    <string name="calc">Калькулятор температуры</string>
+    <string name="temp">Введите температуру</string>
+    <string name="result">Результат</string>
+    <string name="names">Саидбаев Александр Павлович</string>
+    <string name="myprogram">Моя программа</string>
+</resources>
