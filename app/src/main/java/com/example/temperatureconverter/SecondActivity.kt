@@ -1,20 +1,16 @@
 package com.example.temperatureconverter
 
 import android.os.Bundle
-import android.widget.ArrayAdapter
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
-import android.widget.Toast
+import android.view.View
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 
-class SecondActivity<Spinner> : AppCompatActivity() {
+class SecondActivity : AppCompatActivity() {
 
     private val scales = arrayOf("Цельсий", "Фаренгейт", "Кельвин")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         setContentView(R.layout.activity_second)
 
         val spinnerFrom: Spinner = findViewById(R.id.spinnerFrom)
@@ -43,7 +39,6 @@ class SecondActivity<Spinner> : AppCompatActivity() {
             val fromScale = spinnerFrom.selectedItem.toString()
             val toScale = spinnerTo.selectedItem.toString()
 
-
             val result = convertTemperature(temperature, fromScale, toScale)
 
             textViewResult.text = "Результат: $result $toScale"
@@ -51,14 +46,14 @@ class SecondActivity<Spinner> : AppCompatActivity() {
     }
     private fun convertTemperature(value: Double, from: String, to: String): Double {
         var tempInCelsius: Double
-        
+
         tempInCelsius = when (from) {
             "Цельсий" -> value
             "Фаренгейт" -> (value - 32) * 5 / 9
             "Кельвин" -> value - 273.15
             else -> value
         }
-        
+
         return when (to) {
             "Цельсий" -> tempInCelsius
             "Фаренгейт" -> tempInCelsius * 9 / 5 + 32
